@@ -1,0 +1,312 @@
+/*
+ * Qt Stylesheets (How to match object properties for styling)
+ * https://forum.qt.io/post/432457
+ */
+
+#PreferencesWidget #MainWidget {
+	border: 4px solid #DDD;
+	border-radius: 3px;
+	border-style: dashed;
+}
+
+#PreferencesWidget #MainWidget QLabel {
+	color: #1E1E1E;
+}
+
+#PreferencesWidget #MainWidget QCheckBox {
+	padding: 8px;
+    height: 24px;
+}
+
+#PreferencesWidget #MainWidget QCheckBox::indicator {
+	subcontrol-origin: padding;
+    subcontrol-position: center right;
+    background: transparent;
+	width: 24px;
+    height: 24px;
+}
+
+#PreferencesWidget #MainWidget QCheckBox::indicator:checked {
+    padding: 8px;
+    height: 24px;
+    image: url(:/icon/check.png);
+}
+
+#PreferencesWidget #MainWidget QCheckBox::indicator:unchecked {
+    padding: 8px;
+    height: 24px;
+    image: url(:/icon/uncheck.png);
+}
+
+#PreferencesWidget #MainWidget QToolTip {
+	color: #777;
+	background-color: #FEFEFE;
+	border: 1px solid #888;
+	background-clip: border;
+}
+
+#PreferencesWidget #MainWidget QToolTip QLabel {
+	background-color: transparent;
+	border: 0;
+}
+
+#PreferencesWidget #ReturnButton {
+	border: 0;
+	padding: 0;
+	text-align: right;
+}
+
+#PreferencesWidget QLineEdit {
+	background-color: #EEE;
+	border: 2px solid #DDD;
+	padding: 8px;
+	color: #777;
+	font-size: 24px;
+}
+
+#SearchWidget {
+	border-radius: 3px;
+	background-color: #FDFDFD;
+	border: 1px solid #566176;
+	padding: 16px;
+	color: #777;
+}
+
+#SearchWidget:focus {
+	border-radius: 3px;
+	background-color: #FFF;
+	border: 2px solid #4C566A;
+	padding: 16px;
+}
+
+#Application {
+	background-color: #FFF;
+}
+
+TableWidget {
+	color: #777;
+}
+
+TableWidget {
+	background-color: transparent;
+	alternate-background-color: #FAFAFA;
+}
+
+QTableView {
+	outline: 0;
+	border: 0;
+}
+
+/* setting this fucks the default selection-* selectors */
+QTableView::item {
+	border: 0;
+	padding: 8px;
+}
+
+QTableView::item:selected {
+	background-color: rgba(55, 89, 182, 0.4);
+	color: #FEFEFE;
+}
+
+/* This is not the default behaviour, this color is being inherited through
+ * the custom StyledItemDelegate, by default this only works on cells.
+ */
+QTableView::item:hover {
+	background-color: rgba(55, 89, 182, 0.2);
+}
+
+QTableView::item:selected:hover {
+	background-color: rgba(55, 89, 182, 0.5)
+}
+
+#BookmarkAddWidgetContainer {
+	background: white;
+	border-top: 6px solid #2e3440;
+	border-bottom: 1px solid #2e3440;
+	border-left: 1px solid #2e3440;
+	border-right: 1px solid #2e3440;
+}
+
+#BookmarkAddWidget QLineEdit {
+	border-radius: 3px;
+	background-color: #FDFDFD;
+	border: 1px solid #566176;
+	padding: 16px;
+	color: #777;
+}
+
+#BookmarkAddWidget QLineEdit:focus {
+	border-radius: 3px;
+	background-color: #FFF;
+	border: 2px solid #4C566A;
+	padding: 16px;
+}
+
+QPushButton[cssClass="empty"] {
+	background: transparent;
+	margin: 0;
+	padding: 0;
+}
+
+/* the subcontrols below are used only in the MenuButtonPopup mode */
+QToolButton::menu-button {
+    width: 24px;
+	background: transparent;
+}
+
+QToolButton,
+QPushButton[cssClass="default"] {
+    border: 2px solid #2e3440;
+    color: #EEE;
+    border-radius: 2px;
+    padding: 16px 24px;
+    font-weight: bold;
+    background: #4c566a;
+}
+
+QToolButton:disabled,
+QPushButton[cssClass="default"]:disabled {
+    border: 2px solid rgba(67, 76, 94, .1);
+    color: rgba(67, 76, 94, .33);
+    background: rgba(67, 76, 94, .3);
+}
+
+QToolButton:hover,
+QPushButton[cssClass="default"]:hover { background: #434c5e; }
+QToolButton:pressed,
+QPushButton[cssClass="default"]:pressed { background: #3b4252; }
+
+QPushButton[cssClass="defaultLesser"] {
+	border: 2px solid #777;
+    color: #777;
+    border-radius: 2px;
+    padding: 16px 24px;
+    font-weight: bold;
+    background: transparent;
+}
+
+QPushButton[cssClass="defaultLesser"]:hover { border: 2px solid #999; color: #999; }
+QPushButton[cssClass="defaultLesser"]:pressed { border: 2px solid #555; color: #555; }
+
+QPushButton[cssClass="success"] {
+    border: 2px solid #3f7d4e;
+    color: #FEFEFE;
+    border-radius: 2px;
+    padding: 16px 24px;
+    font-weight: bold;
+    background: qlineargradient(x1: 0, y1: 0.03, x2: 0, y2: 1,
+                stop: 0     #62AF73,
+                stop: 0.03  #409E55,
+                stop: 1     #3B904E);
+}
+
+QPushButton[cssClass="success"]:hover {
+    background: qlineargradient(x1: 0, y1: 0.03, x2: 0, y2: 1,
+                stop: 0     #62AF73,
+                stop: 0.03  #51A664,
+                stop: 1     #3B904E);
+}
+
+QPushButton[cssClass="success"]:pressed {
+    background: qlineargradient(x1: 0, y1: 0.03, x2: 0, y2: 1,
+                stop: 0     #62AF73,
+                stop: 0.03  #3B904E,
+                stop: 1     #3B904E);
+}
+
+QPushButton[cssClass="error"] {
+    border: 2px solid #150706;
+    color: #F6BDB8;
+    border-radius: 2px;
+    padding: 16px 24px;
+    font-weight: bold;
+    background: qlineargradient(x1: 0, y1: 0.03, x2: 0, y2: 1,
+                stop: 0     #E95C4D,
+                stop: 0.03  #D24637,
+                stop: 1     #BE3F32);
+}
+
+QPushButton[cssClass="error"]:hover {
+    background: qlineargradient(x1: 0, y1: 0.03, x2: 0, y2: 1,
+                stop: 0     #E95C4D,
+                stop: 0.03  #E74C3C,
+                stop: 1     #BE3F32);
+}
+
+QPushButton[cssClass="error"]:pressed {
+    background: qlineargradient(x1: 0, y1: 0.03, x2: 0, y2: 1,
+                stop: 0     #E95C4D,
+                stop: 0.03  #BE3F32,
+                stop: 1     #BE3F32);
+}
+
+#RowContextMenu {
+    background-color: #FFF;
+    color: #777;
+    padding: 0;
+	margin: 0;
+    border: 2px solid #777;
+	border-radius: 2px;
+}
+
+#RowContextMenu::item {
+    background-color: #FFF;
+	padding: 8px 24px;
+}
+
+#RowContextMenu::item:selected {
+    background-color: #EEE;
+}
+
+#ActionDropdownMenu {
+    background-color: #FFF;
+    color: #777;
+    padding: 0;
+	margin: 0;
+    border-top: 0;
+    border-right: 2px solid #777;
+    border-bottom: 2px solid #777;
+    border-left: 2px solid #777;
+	border-bottom-left-radius: 2px;
+	border-bottom-right-radius: 2px;
+}
+
+#ActionDropdownMenu::item {
+    background-color: #FFF;
+	padding: 12px 32px;
+}
+
+#ActionDropdownMenu::item:selected {
+    background-color: #EEE;
+}
+
+QScrollBar::add-page:vertical,
+QScrollBar::sub-page:vertical {
+    background: none;
+}
+
+QScrollBar:vertical {
+    background: #EEE;
+}
+
+QScrollBar::handle:vertical {
+    background: #999;
+	margin: 4px 6px;
+}
+
+QScrollBar::add-line:vertical {
+	background: none;
+	height: 20px;
+	subcontrol-position: bottom;
+	subcontrol-origin: margin;
+}
+
+QScrollBar::sub-line:vertical {
+	background: none;
+	height: 20px;
+	subcontrol-position: top;
+	subcontrol-origin: margin;
+}
+
+QLabel[cssClass="emptyStateText"] { color: #CCC; }
+QLabel[cssClass="emptyStateTextLesser"] { color: #C5C5C5; }
